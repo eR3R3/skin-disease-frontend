@@ -30,7 +30,7 @@
     "framer-motion": "^11.18.1",
     "lucide-react": "^0.469.0",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "^13.5.6",
+    "next": "15.0.3",
     "ngrok": "^5.0.0-beta.2",
     "openai": "^4.73.0",
     "pinyin": "^4.0.0-alpha.2",
