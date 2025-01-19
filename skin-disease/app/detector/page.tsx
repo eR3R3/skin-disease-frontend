@@ -107,7 +107,7 @@ export default function CreateUserForm () {
 
       // Send POST request
       try {
-        const response = await fetch('http://yuanzl.cn:5840/process', {
+        const response = await fetch('https://yuanzl.cn:5840/process', {
           method: 'POST',
           body: formData,
         });
