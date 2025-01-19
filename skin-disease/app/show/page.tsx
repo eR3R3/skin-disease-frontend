@@ -15,6 +15,8 @@ const ShowPage = () => {
   const result = searchParams.get('result');
   const parsedResult = result ? JSON.parse(result) : null;
 
+
+
   useEffect(()=>{
     async function fetchSuggestion() {
 

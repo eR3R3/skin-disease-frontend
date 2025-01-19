@@ -1,6 +1,10 @@
 
 const nextConfig = {
-  /* config options here */
+  experimental: {
+    outputFileTracingIncludes: {
+      '/show': './app/show/**',
+    },
+  },
 };
 
 export default nextConfig;
