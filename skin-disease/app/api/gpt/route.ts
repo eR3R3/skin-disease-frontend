@@ -5,7 +5,7 @@ export const POST = async(Content: any) => {
 
   const content = await Content.json()
   console.log(content)
-  const {disease, prob} = content
+  const {disease, probability} = content
 
   try {
     const openai = new OpenAI(
@@ -17,11 +17,10 @@ export const POST = async(Content: any) => {
     const completion = await openai.chat.completions.create({
       model: "qwen-plus",
       messages: [
-        { role: "system", content: "You are a helpful assistant." },
+        { role: "system", content: "你是一个乐于助人的助理." },
         {
           role: "user",
-          content: `this is the user probable Skin Disease Type: ${disease}, this is the probability that the user will get 
-          this disease: ${prob}. Give actual advices to this user`
+          content: `该用户可能的皮肤病类型是: ${disease}, 这个用户可能患有该疾病的概率是: ${probability}. 不使用markdown并该用户一些建议`
         }
       ],
     });
