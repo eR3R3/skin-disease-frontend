@@ -1,12 +1,12 @@
 'use client'
 
-import React, {useEffect, useState} from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import { Textarea } from "@/components/ui/textarea"
 import CreateButton from "@/components/shared/CreateButton";
 import {useRouter} from "next/navigation";
 import { useSearchParams } from 'next/navigation';
 
-const ShowPage = () => {
+const ShowPageContent = () => {
 
   const [suggestion, setSuggestion] = useState("")
 
@@ -54,5 +54,10 @@ const ShowPage = () => {
     </div>
   );
 };
+const ShowPage = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <ShowPageContent />
+  </Suspense>
+);
 
 export default ShowPage;
