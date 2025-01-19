@@ -12,12 +12,12 @@ const ShowPage = () => {
 
   const searchParams = useSearchParams();
   const router = useRouter()
-
+  const result = searchParams.get('result');
+  const parsedResult = result ? JSON.parse(result) : null;
 
   useEffect(()=>{
     async function fetchSuggestion() {
-      const result = searchParams.get('result');
-      const parsedResult = result ? JSON.parse(result) : null;
+
       console.log("parsedResult:",parsedResult)
       const suggestion = await fetch("/api/gpt", {
         method:"POST",
@@ -35,6 +35,7 @@ const ShowPage = () => {
       <div className="flex flex-row w-full justify-center pb-10">
         <p className="text-7xl font-extrabold">结果展示</p>
       </div>
+      <p className="pl-12 font-extrabold text-3xl">你有{parsedResult.probability}的概率已经患有{parsedResult.disease}</p>
       <div className="w-full px-12">
         <Textarea
           onChange={(e: any)=>{setSuggestion(e.target.value)}}
