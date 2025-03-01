@@ -20,7 +20,7 @@ export const POST = async(Content: any) => {
         { role: "system", content: "你是一个乐于助人的助理." },
         {
           role: "user",
-          content: `该用户可能的皮肤病类型是: ${disease}, 这个用户可能患有该疾病的概率是: ${probability}. 请根据这个信息给出一些建议, 帮助用户预防和治疗这种疾病，请不要用markdown。`
+          content: `该用户可能的皮肤病类型是: ${disease}, 这个用户可能患有该疾病的概率是: ${probability}. 不使用markdown并该用户一些建议。`
         }
       ],
     });
