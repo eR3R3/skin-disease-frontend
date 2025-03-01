@@ -20,7 +20,8 @@ export const POST = async(Content: any) => {
         { role: "system", content: "你是一个乐于助人的助理." },
         {
           role: "user",
-          content: `该用户可能的皮肤病类型是: ${disease}, 这个用户可能患有该疾病的概率是: ${probability}. 不使用markdown并该用户一些建议`
+          content: `该用户可能的皮肤病类型是: ${disease}, 这个用户可能患有该疾病的概率是: ${probability}. 请根据这个信息给出一些建议, 帮助用户预防和治疗这种疾病，请不要用markdown，用
+          最清晰的语言给出建议，对于不同的疾病请给出不同的建议，并且在disease为空的时候给出无疾病的建议。最好能给出药物治疗，饮食建议，生活习惯建议，运动建议，心理建议等。`
         }
       ],
     });
